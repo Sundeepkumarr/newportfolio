@@ -1,0 +1,198 @@
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Noto Sans', sans-serif;
+            overflow-x: hidden;
+        }
+::-webkit-scrollbar {
+            display: none;
+        }
+        .content-wrapper {
+            max-width: 700px;
+            margin: auto;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        .dropdown {
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: block;
+        }
+
+        .dropdown.visible {
+            display: block;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-btn {
+            width: 100%;
+            padding: 15px 20px;
+            background: #fe6a07d0;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .dropdown-btn i.arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-btn.active i.arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            overflow: hidden;
+            padding: 10px 20px;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+
+        .dropdown-content.show {
+            display: flex !important;
+            padding: 20px;
+        }
+
+        .card {
+            width: 140px;
+            text-align: center;
+            flex: 1 1 calc(33.33% - 20px);
+            max-width: 160px;
+        }
+
+        .percent {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+        }
+
+        .percent svg {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 140px;
+            height: 140px;
+            transform: rotate(-90deg);
+        }
+
+        .percent circle {
+            fill: none;
+            stroke-width: 7;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 2s ease, stroke 2s ease;
+        }
+
+        .percent circle.bg {
+            stroke: #eee;
+        }
+
+        .percent circle.fg {
+            stroke: var(--clr);
+            fill: none;
+            stroke-dasharray: 314;
+            stroke-dashoffset: 314;
+            transition: stroke-dashoffset 2s ease;
+        }
+
+        .dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--clr);
+            border-radius: 50%;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .number h2 {
+            font-size: 22px;
+            margin: 0;
+            transition: color 0.4s ease;
+        }
+
+        .number p {
+            font-size: 14px;
+            margin: 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        @media (max-width: 800px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                flex: 1 1 45%;
+            }
+
+            .dropdown-btn {
+                font-size: 16px;
+                padding: 12px 16px;
+            }
+
+            .number h2 {
+                font-size: 20px;
+            }
+
+            .number p {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .dropdown-content {
+                justify-content: center;
+            }
+
+            .card {
+                width: calc(50% - 10px);
+            }
+
+            .card:nth-child(odd) {
+                margin-right: 10px;
+            }
+        }

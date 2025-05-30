@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Sandeep Kumar</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fff7f0 0%, #ffe0c3 100%);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .contact-section {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    /* background: #fff; */
+    border-radius: 15px;
+    /* box-shadow: 0 8px 20px rgba(0,0,0,0.05); */
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fe6807;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-section p {
+    margin-top: -6px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1rem;
+  }
+
+  .row-inputs {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .row-inputs .inputGroup {
+    flex: 1 1 0;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .inputGroup {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .inputGroup input,
+  .inputGroup textarea {
+    width: 100%;
+    padding: 12px 40px;
+    font-size: 0.95rem;
+    border: 2px solid #cccccc77;
+    border-radius: 8px;
+    background: #f9f9f93c;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .inputGroup input:focus,
+  .inputGroup textarea:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 8px #aaa8;
+    background: #f9f9f93c;
+    ;
+  }
+
+  .inputGroup label {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    transform: translateY(-52%);
+    padding: 0 5px;
+    color: #aaa;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+
+  .inputGroup input:focus+label,
+  .inputGroup input:not(:placeholder-shown)+label,
+  .inputGroup textarea:focus+label,
+  .inputGroup textarea:not(:placeholder-shown)+label {
+    top: -10px;
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+
+  .inputGroup i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 16px;
+  }
+
+  .inputGroup textarea {
+    height: 120px;
+    resize: none;
+  }
+
+  button#submit {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 2px 12px rgba(254, 104, 7, 0.10);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    min-width: 120px;
+    cursor: pointer;
+    align-self: flex-end;
+    z-index: 1;
+    transition: color 0.2s;
+    margin-top: -10px;
+  }
+
+  button#submit::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%;
+    background: linear-gradient(90deg, #fe6807 60%, #ffb86c 100%);
+    z-index: 0;
+    border-radius: 25px;
+    transition: width 0.4s cubic-bezier(.4, 2, .6, 1);
+  }
+
+  button#submit:hover::before {
+    width: 100%;
+  }
+
+  button#submit span,
+  button#submit i {
+    position: relative;
+    z-index: 1;
+  }
+
+ @media (max-width: 600px) {
+    .section {
+      padding: 20px 15px;
+      border-radius: 12px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: .4rem;
+      margin-left: -25px;
+    }
+
+    button {
+      font-size: 0.95rem;
+    }
+.inputGroup {
+      margin-bottom: 15px;
+      margin-left: -25px;
+      flex: 1 1 45%;
+    }
+    .inputGroup input,
+    .inputGroup textarea {
+      font-size: 0.85rem;
+    }
+
+    .info-section .iconGroup {
+      font-size: .9rem;
+    }
+
+    .info-section i {
+      font-size: 18px;
+    }
+
+    .row-inputs {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .row-inputs .inputGroup {
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<body>
+
+  <section class="contact-section">
+    <h1>Contact Me</h1>
+    <hr style="width:200px; border:1.8px solid #fe6807; margin: 25px auto 25px auto; border-radius:2px;">
+    <p>If you have any questions, project ideas, or just want to say hello, feel free to drop a message!</p>
+    <form id="contactForm">
+      <!-- <div class="row-inputs"> -->
+      <div class="inputGroup">
+        <i class="fas fa-user"></i>
+        <input type="text" id="name" placeholder=" " required>
+        <label for="name">Enter Your Name*</label>
+      </div>
+      <div class="inputGroup">
+        <i class="fas fa-phone"></i>
+        <input type="tel" id="phone" placeholder=" ">
+        <label for="phone">Enter Your Phone</label>
+      </div>
+      <!-- </div> -->
+      <div class="inputGroup" style="margin-bottom: 28px;">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder=" " required>
+        <label for="email">Enter Your Email*</label>
+      </div>
+      <div class="inputGroup">
+        <i class="fas fa-comment-dots"></i>
+        <textarea id="message" placeholder=" " required></textarea>
+        <label for="message">Enter Your Message*</label>
+      </div>
+      <button type="submit" id="submit">
+        <span>Send Message </span> <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </section>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="script.js" type="module"></script>
+  <script>
+  fetch("../header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          hamburger.classList.toggle("toggle");
+        });
+      }
+    })
+    .catch(err => console.error("Error loading header:", err));
+</script>
+</body>
+
+</html>

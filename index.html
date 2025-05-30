@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sundeep Kumar</title>
+
+  <!-- Main Style and Icons -->
+  <!-- <link rel="stylesheet" href="style.css"/> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<style>
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  section {
+  padding: 4em 10%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+</style>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Main Sections -->
+  <main id="main-content">
+    <div id="intro"></div>
+    <div id="about"></div>
+    <div id="skills"></div>
+    <div id="project"></div>
+    <div id="qualifications"></div>
+    <div id="contact"></div>
+    <div id="info"></div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script >
+    // Utility to load HTML into containers
+function loadPage(id, file) {
+  fetch(file)
+    .then(res => res.text())
+    .then(data => document.getElementById(id).innerHTML = data)
+    .catch(err => console.error(`Error loading ${file}`, err));
+}
+
+// Load all components
+document.addEventListener("DOMContentLoaded", () => {
+  loadPage("header", "header.html");
+  
+  loadPage("intro", "pages/index_intro.html");
+  loadPage("about", "pages/about.html");
+ // loadPage("skills", "pages/skills.html");
+ // loadPage("project", "pages/project.html");
+  loadPage("qualifications", "pages/qualifications.html");
+  loadPage("contact", "pages/contact.html");
+  loadPage("info", "pages/info.html");
+  // loadPage("footer", "pages/footer.html");
+});
+ // Year update
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

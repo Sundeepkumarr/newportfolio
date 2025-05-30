@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="header.css">
+<header class="main-header">
+
+  <nav class="navbar">
+    <div class="logo">Sundeep</div>
+    <ul class="nav-menu">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/pages/about.html">About</a></li>
+      <li><a href="/pages/skills.html">Skills</a></li>
+      <li><a href="/pages/project.html">Project</a></li>
+      <li><a href="/pages/contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</header>
+  <script>
+    // Toggle mobile menu
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      });
+    });
+    // Hamburger functionality
+// (Removed duplicate code)
+
+  </script>

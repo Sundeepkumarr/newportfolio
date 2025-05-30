@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sundeep Kumarr संदीप कुमार</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="manifest" href="../assets/favicon_io/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+  html,
+  body {
+    height: 100%;
+    scroll-behavior: smooth;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fff7f0 0%, #ffe0c3 100%);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  main {
+    margin-top: -80px;
+    /* match your header height */
+    /* width: 100%; */
+    padding-top: 80px;
+    background: transparent;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: -50px;
+  }
+
+  /* .index-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+    min-height: 100vh;
+    position: relative;
+     flex: 1 1 auto;
+     flex-direction: column;
+  } */
+
+  .welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(120deg, #fff7f0 0%, #ffe3d0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 1s;
+    overflow: hidden;
+  }
+
+ .welcome-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+  .welcome-text {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fe6807;
+    text-shadow: 0 8px 32px rgba(254, 104, 7, 0.15);
+    letter-spacing: 2px;
+    will-change: transform;
+    transition: transform 0.2s;
+    user-select: none;
+  }
+
+  .modern-hero {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+  }
+
+  .modern-card {
+    background: transparent;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+    gap: 48px;
+    width: 95vw;
+    margin: 0 auto;
+  }
+
+  .modern-image {
+    margin-top: -60px;
+    margin-right: 90px;
+    padding-right: 12px;
+    position: relative;
+    width: 440px;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modern-image img {
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 4px 24px rgba(254, 104, 7, 0.20);
+    transition: transform 0.3s cubic-bezier(.4, 2, .6, 1);
+  }
+
+  .modern-info {
+    margin-left: 40px;
+    flex: 2 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .modern-info h1 {
+    font-size: 2.5rem;
+    margin-top: 50px;
+    margin-bottom: -75px;
+    font-weight: 700;
+    color: #fe6807;
+    letter-spacing: 1px;
+    min-height: 2.5em;
+    position: relative;
+  }
+
+  .modern-info h2 {
+    margin-top: 50px;
+    margin-bottom: -70px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+  }
+
+  .modern-info h3 {
+    margin-top: 25px;
+    margin-left: 80px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #222;
+    position: relative;
+  }
+
+  .modern-info p {
+    margin-top: -20px;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+    text-align: justify;
+  }
+
+  .modern-actions {
+    margin-right: 400px;
+    background: transparent;
+    flex: 1 1 260px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .modern-soc {
+    position: fixed !important;
+    right: 32px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+    margin: 0;
+    border-radius: 32px;
+    transition: transform 0.3s cubic-bezier(.4, 2, .6, 1);
+  }
+
+  .modern-soc a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fe6807;
+    font-size: 1.5rem;
+    border: 1.5px solid #fe6807;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    text-decoration: none;
+  }
+
+  .modern-soc a:hover {
+    background: #fe6807;
+    color: #fff;
+    transform: scale(1.13);
+    z-index: 3;
+  }
+
+  .modern-soc a i {
+    transition: transform 0.2s;
+    display: flex;
+    padding: 10px;
+  }
+
+  .modern-soc a .soc-label {
+    display: none !important;
+  }
+
+  .modern-btn {
+    width: 170px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -250px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: none;
+    color: #000;
+    font-weight: 500;
+    border: none;
+    border-radius: 25px;
+    font-size: .9rem;
+    box-shadow: 0 2px 12px rgba(254, 104, 7, 0.10);
+    text-decoration: none;
+    transition: transform 0.2s;
+    z-index: 1;
+  }
+
+  .modern-btn i {
+    margin-left: 5px;
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+
+  .modern-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 25%;
+    background: linear-gradient(90deg, #fe6807 60%, #ffb86c 100%);
+    z-index: -1;
+    transition: width 0.5s cubic-bezier(.4, 2, .6, 1);
+    border-radius: 25px;
+  }
+
+  .modern-btn:hover {
+    transform: scale(1.07);
+  }
+
+  .modern-btn:hover::before {
+    width: 100%;
+  }
+
+  .animated-name,
+  .animated-name1 {
+    position: absolute;
+    margin-top: 20px;
+    left: 10px;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    text-align: left;
+  }
+
+  .animated-name {
+    font-family: 'Gotu', sans-serif;
+  }
+
+  .animated-name1 {
+    font-family: 'Montserrat', 'Noto Sans', sans-serif;
+  }
+
+  .animated-name.active,
+  .animated-name1.active {
+    opacity: 1;
+    pointer-events: auto;
+    animation: popRole 1s;
+  }
+
+  .role-wrapper {
+    position: relative;
+    height: 1.5em;
+    overflow: hidden;
+  }
+
+  .animated-role {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    color: #fe6807;
+    font-weight: 700;
+    font-size: 1em;
+    font-family: 'Montserrat', 'Noto Sans', sans-serif;
+  }
+
+  .animated-role.active {
+    opacity: 1;
+    animation: popRole 2s;
+  }
+
+  @keyframes popRole {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+</style>
+
+<body>
+  <header></header>
+ <!-- <div class="welcome-overlay" id="welcomeOverlay">
+  <span class="welcome-text" id="welcomeText">Welcome, curious mind. Let’s explore together!</span>
+</div> -->
+
+  <main class="index-container" id="mainContent">
+    <section id="home" class="page-section active">
+      <div class="modern-hero">
+        <div class="modern-card">
+          <div class="modern-image parallax-img" id="parallaxImage" data-speed="0.5">
+  <img src="../assets/1.png" alt="myimage" />
+          </div>
+          <div class="modern-info">
+            <h1>
+              <span class="animated-name active" id="nepali-name">संदिप कुमार</span>
+              <span class="animated-name1" id="english-name">Sundeepkumarrr</span>
+            </h1>
+            <h2>
+              I'm
+              <h3>
+                <span class="animated-role active" id="role-1">App Developer</span>
+                <span class="animated-role" id="role-2">YouTuber</span>
+                <span class="animated-role" id="role-3">Ethical Hacker</span>
+              </h3>
+            </h2>
+            <p>
+              <br>
+              BIT Student | Tech Visionary & Innovator | Passionate Content Creator
+              | Building a Smarter, Purpose-Driven Digital Future
+            </p>
+            <div class="modern-actions">
+              <div class="modern-soc" id="parallaxSoc">
+                <a href="https://github.com/Sundeepkumarr" target="_blank" title="GitHub">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://instagram.com/Sundeepkumarrr" target="_blank" title="Instagram">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/in/Sundeepkumarr" target="_blank" title="LinkedIn">
+                  <i class="bx bxl-linkedin"></i>
+                </a>
+                <a href="https://youtube.com/iSundeepkumarr" target="_blank" title="YouTube">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+              <a class="modern-btn" href="#contact">
+                Contact Me <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // loadPage("intro", "pages/index_intro.html");
+//           const text = document.getElementById('welcomeText');
+// window.addEventListener('mousemove', (e) => {
+//   const x = (e.clientX / window.innerWidth - 0.5) * 40;
+//   const y = (e.clientY / window.innerHeight - 0.5) * 40;
+//   if (text) text.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+//   if (parallaxImage) parallaxImage.style.transform = `translate(${x / 2}px, ${y / 2}px) scale(1.03)`;
+//   if (parallaxSoc) parallaxSoc.style.transform = `translate(${x / 2.5}px, ${y / 2.5}px)`;
+//   if (overlay) {
+//     setTimeout(() => {
+//       overlay.classList.add('hide');
+//     }, 2000); // 4000ms = 4 seconds
+//   }
+// });
+
+      const waitForIntro = setInterval(() => {
+        const nepaliName = document.getElementById("nepali-name");
+        const role1 = document.getElementById("role-1");
+
+        if (nepaliName && role1) {
+          clearInterval(waitForIntro);
+
+          // Name Animation
+          const englishName = document.getElementById('english-name');
+          let showNepali = true;
+          setInterval(() => {
+            nepaliName.classList.toggle('active', showNepali);
+            englishName.classList.toggle('active', !showNepali);
+            showNepali = !showNepali;
+          }, 2500);
+
+          // Role Animation
+          const roles = [
+            role1,
+            document.getElementById('role-2'),
+            document.getElementById('role-3')
+          ];
+          let currentRole = 0;
+          setInterval(() => {
+            roles.forEach((el, idx) => el.classList.toggle('active', idx === currentRole));
+            currentRole = (currentRole + 1) % roles.length;
+          }, 1800);
+        }
+      }, 100);
+    });
+    const parallaxImage = document.getElementById('parallaxImage');
+    const parallaxSoc = document.getElementById('parallaxSoc');
+
+    if (parallaxImage) {
+      parallaxImage.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        parallaxImage.style.transform = `translate(${x}px, ${y}px) scale(1.03)`;
+      });
+    }
+
+    if (parallaxSoc) {
+      parallaxSoc.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 10;
+        const y = (e.clientY / window.innerHeight - 0.5) * 10;
+        parallaxSoc.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    }
+  </script>
+</body>
+
+</html>

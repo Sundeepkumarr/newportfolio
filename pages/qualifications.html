@@ -1,0 +1,148 @@
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        scroll-behavior: smooth;
+        font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(120deg, #f7f8fa 60%, #ffe0c3 100%);
+        overflow-x: hidden;
+    }
+
+    .qualifications {
+        position: relative;
+        padding: 100px 20px;
+        overflow: hidden;
+    }
+
+    /* Removed parallax background and animation */
+
+    .qualifications .container {
+        max-width: 650px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+        font-weight: 600;
+        text-align: center;
+        color: #fe6807;
+        text-decoration: underline;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    .qualification-item {
+        backdrop-filter: blur(5px);
+        border-radius: 25px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        margin-bottom: 10px;
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
+        /* Removed animation */
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+
+    .qualification-content h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .qualification-content p,
+    .qualification-content span,
+    .qualification-content li {
+        font-size: .8rem;
+        color: #555;
+        margin: 8px 0;
+    }
+
+    .qualification-item ul {
+        list-style: disc inside;
+        padding-left: 0;
+        margin: 10px 0 0;
+    }
+
+    .duration i {
+        vertical-align: middle;
+        margin-right: 6px;
+        color: #fe6807;
+        font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .qualification-item {
+            padding: 20px;
+        }
+    }
+</style>
+
+<section class="qualifications" id="qualifications">
+    <div class="container">
+        <h2 class="section-title">Qualifications & Achievements</h2>
+
+        <div class="qualification-item">
+            <div class="qualification-content">
+                <h3>Bachelor in Information Technology</h3>
+                <p><strong><a href="https://trmc.edu.np/" target="_blank" style="color: #fe6807; text-decoration: none;">Thakur Ram Multiple Campus</a></strong></p>
+                <p>Tribhuvan University</p>
+                <span class="duration">
+                    <i class='bx bx-calendar-alt'></i> 2023 - Present
+                </span>
+            </div>
+        </div>
+
+        <div class="qualification-item">
+            <div class="qualification-content">
+                <h3>+2 Science</h3>
+                <p><strong><a href="https://www.facebook.com/sesameinternationalschool" target="_blank" style="color: #fe6807; text-decoration: none;">Sesame Secondary School</a></strong></p>
+                <p>National Examinations Board</p>
+                <span class="duration">
+                    <i class='bx bx-calendar-alt'></i> 2019 - 2021
+                </span>
+            </div>
+        </div>
+
+        <div class="qualification-item">
+            <div class="qualification-content">
+                <h3>Secondary Education Examination (SEE)</h3>
+                <p><strong>Sesame Secondary School</strong></p>
+                <span class="duration">
+                    <i class='bx bx-calendar-alt'></i> Till 2019
+                </span>
+            </div>
+        </div>
+
+        <div class="qualification-item">
+            <div class="qualification-content">
+                <h3>Working Experience</h3>
+                <p><strong>Frontend & Mobile App Developer</strong></p>
+                <p>Freelance / Personal Projects</p>
+                <span class="duration">2021 - Present</span>
+            </div>
+        </div>
+
+        <div class="qualification-item">
+            <div class="qualification-content">
+                <h3>Certifications & Achievements</h3>
+                <ul>
+                    <li>Responsive Web Design - freeCodeCamp</li>
+                    <li>Flutter & Dart Development - Udemy</li>
+                    <li>Hackathon Finalist - National IT Fest 2024</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Removed Intersection Observer script for animation -->
